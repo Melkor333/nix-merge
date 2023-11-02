@@ -366,6 +366,7 @@ print_changes() {
 
 do_changes() {
     for package in "${to_migrate_pkgs[@]}"; do
+        _log "Migrating $package"
         _add_to_global_config "$package"
     done
     if [[ "${#to_migrate_pkgs[@]}" > 0 ]]; then
