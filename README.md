@@ -6,7 +6,7 @@
   </p>
 </div>
 
-[[TOC]]
+[TOC]
 
 # About The Project
 
