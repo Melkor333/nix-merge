@@ -6,14 +6,12 @@
   </p>
 </div>
 
-[TOC]
-
 # About The Project
 
 Nix-merge helps you move all your quickly installed packages from `nix-env` into your global configuration.
 Just select the packages you want to *migrate* and *remove* and it does the rest.
 
-[!Showcase of migrating arandr](./showcase.gif)
+![Showcase of migrating arandr](./showcase.gif)
 
 # Getting Started
 
