@@ -12,22 +12,17 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       packages = rec {
-        nix-meddle = with import nixpkgs { system = system; };
+        nix-merge = with import nixpkgs { system = system; };
         stdenv.mkDerivation {
-        name = "nix-meddle";
+        name = "nix-merge";
         phases = "installPhase";
         source = self;
         installPhase = ''
           mkdir -p $out/bin
-          #cp $source/nix-meddle $out/bin/nix-meddle
-          ## Hack in the path to binaries
-          #sed -i 's|#!/usr/bin/env osh|#!${pkgs.bash}/bin/bash|' $out/bin/nix-meddle
-          #sed -i 's|gum |${pkgs.gum}/bin/gum |g' $out/bin/nix-meddle
-          #sed -i 's|rsync |${pkgs.rsync}/bin/rsync |g' $out/bin/nix-meddle
-          #sed -i 's|"mount"|"${pkgs.util-linux}/bin/mount"|g' $out/bin/nix-meddle
+          cp $source/nix-merge.sh $out/bin/nix-merge
           '';
         };
-        default = nix-meddle;
+        default = nix-merge;
       };
       devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
