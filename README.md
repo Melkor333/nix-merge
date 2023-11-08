@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <h3 align="center">Nix-Merge</h3>
+  <h1 align="center">Nix-Merge</h1>
   <p align="center">
     Easily move your `nix-env` packages into your global configuration!
   </p>
@@ -32,7 +32,7 @@ TODO
 ## Usage
 
 ```
-Usage: $0 [OPTION]... FILE
+Usage: nix-merge [OPTION]... FILE
 Migrate all your nix-env packages to a configuration file
 
   -a --all            Just select *all* files. otherwise you will be asked
@@ -50,14 +50,15 @@ Migrate all your nix-env packages to a configuration file
 
 
 CACHE FILES:
-$cache_file
+$HOME/.local/share/nix-merge/packages.cache
                     Stores a list of all existing packages it can find
 
-$state_file
+
+$HOME/.local/share/nix-merge/attrsets.cache
                     Stores the current status of packages-names and what
                     packages are yet to be handled in case of early cancel
 ```
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
